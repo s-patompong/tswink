@@ -14,7 +14,7 @@ TsWink\TswinkServiceProvider::class,
 Publish the config using `php artisan vendor:publish` and select `TsWink\TswinkServiceProvider`.
 
 Change the config to suite your project
-```
+```php
 <?php
 
 return [
