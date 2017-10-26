@@ -1,0 +1,28 @@
+{
+    "name": "pangpondpon/tswink",
+    "description": "Generate typescript classes from Laravel models.",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": ">=7.1",
+        "illuminate/support": "5.*",
+        "doctrine/dbal": "^2.7@dev"
+    },
+    "author": {
+        "name": "Patompong Savaengsuk ",
+        "email": "p.pangpond@windowslive.com"
+    },
+    "autoload": {
+        "psr-4": {
+            "TsWink\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TsWink\\TswinkServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
