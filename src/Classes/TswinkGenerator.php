@@ -76,6 +76,10 @@ Class TswinkGenerator extends Generator
 
     private function writeFile($fileName, $tsClass)
     {
+        if(!file_exists($this->destination)) {
+            mkdir($this->destination, 077, true);
+        }
+
         $filePath = "{$this->destination}/$fileName";
 
         $file = fopen($filePath, "w");
