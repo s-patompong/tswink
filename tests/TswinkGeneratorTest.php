@@ -15,8 +15,13 @@ class TswinkGeneratorTest extends TestCase
     public function it_can_generate_typescript_classes()
     {
         $generator = new TswinkGenerator;
-        
-        $generator->setDestination(__DIR__."/models");
+
+        $modelPath = __DIR__."/models";
+        if(!file_exists($modelPath)) {
+            mkdir($modelPath, 0777, true);
+        }
+
+        $generator->setDestination($modelPath);
         $generator->generate();
 
         $this->assertEquals(true, true);

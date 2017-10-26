@@ -49,7 +49,7 @@ Class TswinkGenerator extends Generator
     {
         $tsClass = "export class {$this->getTableNameForClassFile()} {\n";
         foreach ($this->table->getColumns() as $column) {
-            $tsClass .= "\t{$column->getName()}: {$this->getSimplifiedType($column)}\n";
+            $tsClass .= "\t{$column->getName()}: {$this->getSimplifiedType($column)};\n";
         }
         return $tsClass . "}\n";
     }
@@ -61,7 +61,7 @@ Class TswinkGenerator extends Generator
 
     private function singularFromTableName()
     {
-        return strtolower(str_singular($this->table->getName()));
+        return str_singular(camel_case($this->table->getName()));
     }
 
     private function getSimplifiedType(Column $column)
