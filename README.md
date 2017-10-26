@@ -29,3 +29,5 @@ php artisan tswink:generate
 ```
 
 The file will be in your selected directory in config file.
+
+![Result Example](https://image.prntscr.com/image/210BjGHFSfKTSJpL8KjZKw.png)
