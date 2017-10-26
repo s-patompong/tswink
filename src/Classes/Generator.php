@@ -22,9 +22,14 @@ abstract class Generator
     {
         $config = new Configuration;
 
-        $connectionParams = [
-            'url' => 'mysql://homestead:secret@localhost/laravel_packages',
-        ];
+        $connectionParams = [];
+
+        if(function_exists('app')) {
+            $connectionParams = app('db')->getConfig();
+            $connectionParams['driver'] = "pdo_" . $connectionParams['driver'];
+            $connectionParams['dbname'] = $connectionParams['database'];
+            $connectionParams['user'] = $connectionParams['username'];
+        }
 
         $this->conn = DriverManager::getConnection($connectionParams, $config);
         $this->schemaManager = $this->conn->getSchemaManager();
