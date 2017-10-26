@@ -3,7 +3,9 @@
 Generate typescript classes from Laravel models.
 
 ## Installation
-Run `composer require pangpondpon/tswink`
+Run `composer require pangpondpon/tswink` and `composer require doctrine/dbal`
+
+Note: `doctrine/dbal` is needed for read table structure to create typescript class files.
 
 If you're using Laravel 5.4 or below, add this to `providers` array inside config/app.php
 ```
