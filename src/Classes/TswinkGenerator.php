@@ -17,11 +17,18 @@ Class TswinkGenerator extends Generator
     /** @var Table */
     private $table;
 
+    /** @var string */
+    private $destination;
+
     public function __construct()
     {
         parent::__construct();
 
         $this->typeSimplifier = new TypeSimplifier;
+
+        if(function_exists('config')) {
+            $this->destination = base_path(config('tswink.ts_classes_destination'));
+        }
     }
 
     public function generate()
@@ -64,6 +71,20 @@ Class TswinkGenerator extends Generator
 
     private function writeFile($fileName, $tsClass)
     {
-        dd($fileName, $tsClass);
+        $filePath = "{$this->destination}/$fileName";
+
+        $file = fopen($filePath, "w");
+        fwrite($file, $tsClass);
+        fclose($file);
+    }
+
+    public function getDestination()
+    {
+        return $this->destination;
+    }
+
+    public function setDestination($destination)
+    {
+        $this->destination = $destination;
     }
 }

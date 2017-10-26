@@ -24,7 +24,6 @@ class TypeSimplifier
         if($type instanceof DateTimeType) {
             return '""';
         }
-
         return "any";
     }
 }
