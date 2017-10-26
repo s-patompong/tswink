@@ -42,7 +42,12 @@ Class TswinkGenerator extends Generator
 
     private function processTable()
     {
-        $this->writeFile($this->singularFromTableName() . ".ts", $this->getClassContent());
+        $this->writeFile($this->fileName() . ".ts", $this->getClassContent());
+    }
+
+    private function fileName()
+    {
+        return str_singular(kebab_case(camel_case($this->table->getName())));
     }
 
     private function getClassContent()
