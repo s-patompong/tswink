@@ -7,7 +7,7 @@
         "php": ">=7.1",
         "illuminate/support": "5.*",
         "doctrine/dbal": "^2.7@dev",
-        "phpunit/phpunit": "^6.5@dev"
+        "phpunit/phpunit": "^7.0"
     },
     "author": {
         "name": "Patompong Savaengsuk ",
