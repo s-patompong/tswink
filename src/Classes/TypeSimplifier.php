@@ -68,7 +68,8 @@ class TypeSimplifier
         return $this->type instanceof BinaryType
             || $this->type instanceof GuidType
             || $this->type instanceof StringType
-            || $this->type instanceof TextType;
+            || $this->type instanceof TextType
+            || $this->type instanceof BlobType;
     }
 
     private function isTypeAny()
