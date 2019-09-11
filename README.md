@@ -1,4 +1,4 @@
-# pangpondpon/tswink
+# TS Wink
 
 Generate typescript classes from Laravel models.
 
